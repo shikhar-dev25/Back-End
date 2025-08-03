@@ -1,0 +1,17 @@
+{
+  "name": "notes-todo-app",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^5.1.0",
+    "url": "^0.11.4"
+  },
+  "description": ""
+}
