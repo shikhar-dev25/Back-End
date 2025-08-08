@@ -26,7 +26,6 @@ app.post(("/api/users"),(req,res) => {
 
 
 
-
 app
 .route("/users/:id")
 .get((req, res) => {
@@ -36,11 +35,11 @@ app
 })
 .patch((req,res) => {
     //Updating/Editing User
-    return res.json({status: pending})
+    return res.json({status: "Pending"})
 })
 .delete((req,res) => {
     //Deleting User
-    return res.json({status: pending})
+    return res.json({status: "Pending"})
 })
 
 
