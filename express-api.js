@@ -39,7 +39,20 @@ app
 })
 .delete((req,res) => {
     //Deleting User
-    return res.json({status: "Pending"})
+    const userId = Number(req.params.id);   
+    const userExist = users.some((user) => user.id_number === userId)
+    if(!userExist) {
+        return res.status(404).json({error: "User Not Found!"})
+    }
+
+    const userUpdate = users.filter((user) => user.id_number !== userId);
+
+    fs.writeFile("./MOCK_DATA.json", JSON.stringify(userUpdate, null, 1), (err) => {
+        if (err) {
+            return res.status(500).json({error: "Failed to delete User"})
+        }
+        return res.json({status: `User with ID: ${userId} DELETED`})
+    })
 })
 
 
